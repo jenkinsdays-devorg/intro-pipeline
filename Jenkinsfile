@@ -8,8 +8,16 @@ pipeline {
         echo "Hello ${MY_NAME}"
         echo "Hello ${params.Name}"
         sh 'java -version'
-        echo "${TEST_USER_USR}"
-        echo "${TEST_USER_PSW}"
+        echo "ven ${TEST_USER_USR}"
+        echo "test ${TEST_USER_PSW}"
+      }
+    }
+    stage('Deploy') {
+      input {
+        message 'Should we continue?'
+      }
+      steps {
+        echo 'Continuing with deployment'
       }
     }
   }
